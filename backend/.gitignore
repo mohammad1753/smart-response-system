@@ -1,0 +1,17 @@
+.venv/
+__pycash__/
+*.pyc
+
+.env
+*.db
+
+.idea/
+.vscode/
+
+.pytest_cache/
+
+
+logs/
+
+# Rubika Userbot Sessions
+*.rupabik

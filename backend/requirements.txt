@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+sqlalchemy
+alembic
+pydantic-settings
+httpx
+psycopg[binary]
+python-multipart
+pymysql
+alembic
+RupaBik==1.0.2
