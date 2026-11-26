@@ -37,3 +37,26 @@ class CustomerIdentityRepository:
         session.flush()
 
         return identity
+
+    def get_for_update(
+        self,
+        session: Session,
+        identity_id: int,
+        customer_id: int,
+        channel_account_id: int,
+        workspace_id: int,
+    ) -> CustomerIdentity | None:
+        """Lock and retrieve a customer identity within its scope."""
+
+        statement = (
+            select(CustomerIdentity)
+            .where(
+                CustomerIdentity.id == identity_id,
+                CustomerIdentity.customer_id == customer_id,
+                CustomerIdentity.channel_account_id == channel_account_id,
+                CustomerIdentity.workspace_id == workspace_id,
+            )
+            .with_for_update()
+        )
+
+        return session.scalar(statement)
