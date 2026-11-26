@@ -1,5 +1,0 @@
-4mysZ5U0nog8fx0J
-
-
-
-uvicorn app.main:app --reload
